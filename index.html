@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title>My Atlas</title>
+    <script type="module" src="js_atlas/appAtlas.js" defer></script>
+    <script type="module" src="js_atlas/Single.js" defer></script>
+
+</head>
+
+<body>
+    <header class="container-fluid ">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <div class="logo ">
+                <img class="ms-md-5" src="images/logo.png" alt="logo-atlas" width="150px" height="90px">
+            </div>
+            <nav>
+                <ul class="d-flex me-md-5 list-unstyled">
+                    <li>
+                        <a href="single.html?name= Israel">Israel
+                        </a>
+                    </li>|
+                    <li>
+                        <a href="single.html?name= Thailand">   Thailand
+                        </a>
+                    </li>|
+                    <li>
+                        <a href="single.html?name= Brazil">   Brazil
+                        </a>
+                    </li>|
+                    <li>
+                        <a href="single.html?name= peru">   peru
+                        </a>
+                    </li>|
+                    <li>
+                        <a href="single.html?name= United States">USA
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container-fluid">
+        <div class="container main shadow">
+            <div class="col-md-12 p-2 d-flex justify-content-between align-items-center">
+                <button id="search_btn">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+                <input placeholder="search for Country..." type="search" id="id_input" class="mx-2 form-control">
+            </div>
+            <div id="id_loading" class="loading text-center bg-light p-3" >
+                <img src="images/loading.gif" alt="loading" > 
+                <p class="display-3">Loading...</p>
+              </div>
+            <div id="id_row" class="row pt-md-4 h-100 overflow-hidden">
+                <!-- <div class="col-md-6 p-4 h-100">
+                    <article class="row myDiv border p-2">
+                        <div class="box1">
+                            <h3 class="text-decoration-underline"><strong>Israel</strong></h3>
+                            <p><strong>Population:</strong> 9M</p>
+                            <p><strong>Mainland:</strong> Asia</p>
+                            <p><strong>Language:</strong> Heb</p>
+                            <p><strong>Coin:</strong> NIS</p>
+                            <p><strong>Capital:</strong> Jerusalem</p>
+                        </div>
+                        <div class="box center">
+                            <img src="https://flagcdn.com/w320/il.png" alt="flag" class="w-100 h-75">
+                        </div>
+                        <div class="box">
+                            <iframe class="h-100 w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3487738.6313605467!2d37.32574010101718!3d31.386708087971716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1500492432a7c98b%3A0x6a6b422013352cba!2z15nXqdeo15DXnA!5e0!3m2!1siw!2sil!4v1661793646918!5m2!1siw!2sil" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>     
+                        </div>
+                        <div class="box1">
+                            <p class="w-100"><strong>Neighbors:</strong> israel brazil egypt</p>
+                        </div>
+
+                    </article>
+                </div> -->
+                <!-- <div class="col-md-4 p-4 h-100">
+                    <article class="border overflow-hidden myDiv">
+                        <div>
+                            <img src="https://flagcdn.com/w320/il.png" alt="flag" class="w-100 h-75 float-start">
+                        </div>
+                        <div class="p-3">
+                            <h3>Israel</h3>
+                            <p><strong>Capital:</strong> Jerusalem</p>
+                            <p><strong>Population:</strong> 9M</p>
+                        </div>
+
+                    </article>
+                </div> -->
+                <!-- single render -->
+
+
+            </div>
+
+        </div>
+    </main>
+    <footer class="container-fluid ">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <div class="myFooter h6">
+                All rights reserved to Yehonatan Nasimov Ltd.
+            </div>
+            <div class="icon center myFooter">
+                <a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BGuOnMrdGShefquF6zadhfw%3D%3D">
+                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://mobile.twitter.com/explore">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+</html>

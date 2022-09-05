@@ -1,0 +1,120 @@
+export default class CountryItem {
+    constructor(_parent, _item) {
+        this.parent = _parent;
+        this.code = _item.cioc;
+        this.name = _item.name.common;
+        this.pop = _item.population.toLocaleString();
+        this.capital = _item.capital;
+        this.mainLand = _item.region;
+        this.Language = Object.values(_item.languages);
+        this.coin = (Object.keys(_item.currencies)) + ", " + Object.values(Object.values(_item.currencies)[0])[0];
+        this.img = _item.flags.png;
+        this.latlng = _item.latlng;
+        this.borders = (_item.borders != undefined) ? _item.borders :
+            "";
+        // console.log(this.borders);
+    }
+
+    shownRender() {
+        let div = document.createElement("div");
+        div.className = "col-md-4 p-2";
+        document.querySelector(this.parent).append(div);
+
+        div.innerHTML = `
+
+        <div class="p-2 h-100 overflow-hidden">
+       <article class="border myDiv h-100">
+       <a href="single.html?name=${this.name}" class="text-decoration-none text-dark">
+        <div>
+        <img src="${this.img}" alt="flag of ${this.name}" class="w-100">
+        </div>
+         <div class="p-3">
+         <h3>${this.name}</h3>
+        <p><strong>Capital:</strong> ${this.capital}</p>
+        <p><strong>Population:</strong> ${this.pop}</p>
+        </a>
+        </div>
+
+        </article>
+        </div> 
+        `
+
+    }
+
+    render() {
+        let div = document.createElement("div");
+        div.className = "col-md-10 p-4 mx-auto";
+        document.querySelector(this.parent).append(div);
+
+        div.innerHTML = `
+      <article class="row myDiv border p-2 overflow-hidden h-100 ">
+                        <div class=" box col-md-5">
+                            <p class = "text-decoration-underline"><strong>${this.name}</strong></p>
+                            <p><strong>Population:</strong>${this.pop}</p>
+                            <p><strong>Mainland:</strong>${this.mainLand}</p>
+                            <p><strong>Language:</strong>${this.Language}</p>
+                            <p><strong>Coin:</strong>${this.coin}</p>
+                            <p><strong>Capital:</strong>${this.capital}</p>
+                        </div>
+                        <div class="box col-md-7 center">
+                            <img src="${this.img}" alt="flag of ${this.name}" class="w-100 h-75 border">
+                        </div>
+                        <div class="box col-md-6 mx-auto">
+                        <iframe class="w-100"
+                        height="170" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        src="https://maps.google.com/maps?q=${this.latlng[0]},${this.latlng[1]}&hl=en&z=6&amp;output=embed"
+                        >
+                        </iframe>
+                        </div>
+                        <div id="id_border" class="box col-md-5">
+                        
+                        </div>
+                        <div class="col-md-12 text-center p-4">
+                        <a title="go to home page" href="index.html"><i class="fa fa-home text-decoration-none h1 text-dark"
+                                aria-hidden="true"></i></a>
+                        <button title="go back" onclick="history.back()"><i class="fa fa-undo h1"
+                                aria-hidden="true"></i></button>
+                    </div>
+
+                    </article>
+
+      `
+            
+            let borders = div.querySelector("#id_border");
+ 
+
+
+            const getBorderName = async (code) => {
+              let url = `https://restcountries.com/v3.1/alpha/${code.toLowerCase()}`;
+              let resp = await fetch(url);
+              let data = await resp.json();
+              // console.log(data)
+              let {name} = data[0];
+              // console.log(name.common)
+              return name.common;
+            }
+            
+            if (this.borders) {
+              this.borders.forEach(async (item, i) => {
+                if(i === 0){
+                  borders.innerHTML += `<strong>Neighbors:</strong>`
+                }
+                const CountryName = await getBorderName(item)
+                let border = document.createElement("span");
+                border.className = "text-primary"
+                border.style = "cursor: pointer;";
+                border.innerHTML = `${CountryName} `;
+                borders.append(border);
+                border.addEventListener("click", () => {
+                  window.open(`single.html?name=${CountryName}`, "_self")
+                })
+              })
+            }
+
+    }
+
+}
