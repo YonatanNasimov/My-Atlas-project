@@ -74,7 +74,7 @@ main .container .myDiv .divBorder {
 }
 
 footer{
-background: rgba(172, 255, 47, 0.648);
+background: greenyellow;
     min-height: 48px;
     box-shadow: 0px -5px 15px 0px #000000;
 }
