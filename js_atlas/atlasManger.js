@@ -4,14 +4,13 @@ const countries_ar = []
 const showLoading = () => {
    document.querySelector("#id_loading").style.display = "block";
    document.querySelector("#id_row").style.display = "none";
-   document.querySelector(".main").style.background = "white";
+
 
 }
 
 const hideLoading = () => {
    document.querySelector("#id_loading").style.display = "none";
    document.querySelector("#id_row").style.display = "flex";
-   // document.querySelector(".main").style.background = "";
 
 }
 
@@ -38,7 +37,7 @@ export const creatCountries = _ar => {
          Country.shownRender();
 
       })
-   } else{
+   } else {
       document.querySelector("#id_row").innerHTML = "<h3>Country is undefined</h3>";
    }
 }

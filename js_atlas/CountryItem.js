@@ -21,7 +21,7 @@ export default class CountryItem {
 
         div.innerHTML = `
 
-        <div class="p-2 h-100 overflow-hidden">
+        <div class="p-1 h-100 overflow-hidden">
        <article class="border myDiv h-100">
        <a href="single.html?name=${this.name}" class="text-decoration-none text-dark">
         <div>
@@ -30,7 +30,8 @@ export default class CountryItem {
          <div class="p-3">
          <h3>${this.name}</h3>
         <p><strong>Capital:</strong> ${this.capital}</p>
-        <p><strong>Population:</strong> ${this.pop}</p>
+        <i class="center h1 m-0 text-dark fa fa-arrow-down" aria-hidden="true"></i>
+        <p class = "p-0 center">Click for more info</p>
         </a>
         </div>
 
@@ -104,7 +105,7 @@ export default class CountryItem {
                 }
                 const CountryName = await getBorderName(item)
                 let border = document.createElement("span");
-                border.className = "text-primary"
+                border.className = "divBorder"
                 border.style = "cursor: pointer;";
                 border.innerHTML = `${CountryName} `;
                 borders.append(border);
