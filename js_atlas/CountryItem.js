@@ -11,7 +11,6 @@ export default class CountryItem {
         this.img = _item.flags.png;
         this.latlng = _item.latlng;
         this.borders = _item.borders;
-        // console.log(this.borders);
     }
 
     shownRender() {
@@ -92,9 +91,7 @@ export default class CountryItem {
               let url = `https://restcountries.com/v3.1/alpha/${code.toLowerCase()}`;
               let resp = await fetch(url);
               let data = await resp.json();
-              // console.log(data)
               let {name} = data[0];
-              // console.log(name.common)
               return name.common;
             }
             

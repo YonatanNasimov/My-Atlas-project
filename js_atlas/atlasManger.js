@@ -20,7 +20,7 @@ export const doApi = async () => {
    let resp = await fetch(url);
    let data = await resp.json();
    countries_ar.splice(0, data.length, ...data);
-   // console.log(data);
+   console.log(data);
    let startCountries_ar = ["Peru", "Israel", "Russia", "Brazil", "Thailand"];
    let filter_ar = data.filter(item => startCountries_ar.includes(item.name.common));
    console.log(filter_ar);
