@@ -7,11 +7,11 @@ const showLoading = () => {
    document.querySelector(".main").style.background = "white";
 
 }
-// יסתיר את הטעינה ויציג את הרשימה אחרי שהבקשה התקבלה
+
 const hideLoading = () => {
    document.querySelector("#id_loading").style.display = "none";
    document.querySelector("#id_row").style.display = "flex";
-   document.querySelector(".main").style.background = "greenyellow";
+   // document.querySelector(".main").style.background = "";
 
 }
 
@@ -39,7 +39,7 @@ export const creatCountries = _ar => {
 
       })
    } else{
-      document.querySelector("#id_row").innerHTML = "<h3>Country is undefind</h3>";
+      document.querySelector("#id_row").innerHTML = "<h3>Country is undefined</h3>";
    }
 }
 

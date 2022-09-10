@@ -10,8 +10,7 @@ export default class CountryItem {
         this.coin = (Object.keys(_item.currencies)) + ", " + Object.values(Object.values(_item.currencies)[0])[0];
         this.img = _item.flags.png;
         this.latlng = _item.latlng;
-        this.borders = (_item.borders != undefined) ? _item.borders :
-            "";
+        this.borders = _item.borders;
         // console.log(this.borders);
     }
 
