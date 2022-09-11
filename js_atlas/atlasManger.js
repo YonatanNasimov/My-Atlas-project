@@ -46,5 +46,10 @@ export const searchApi = async _searchQuery => {
    console.log(_searchQuery);
    let sorted_ar = countries_ar.filter(item => item.name.common.toLowerCase().includes(_searchQuery.toLowerCase()))
    console.log(sorted_ar);
-   creatCountries(sorted_ar);
+   if(_searchQuery.length < 1){
+      document.querySelector("#id_row").innerHTML = "<h3>Search field is empty</h3>";
+    }
+    else{
+      creatCountries(sorted_ar);
+   }
 }
